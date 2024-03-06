@@ -3,13 +3,17 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../utils/motion';
+import Image from 'next/image';
 
 const ProjectCards = ({ id, imgUrl, title, tag, i, active, handleClick }) => (
     <motion.div
         variants={fadeIn('right', 'spring', i * 0.5, 0.75)}
         className={`${active === id ? 'lg:flex-[3.5] flex-[10]' : 'lg:flex-[0.5] flex-[2]'} relative flex items-center justify-center min-w-[170px] h-[700px] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer`}
         onClick={() => handleClick(id)}>
-        <img
+        <Image
+            width={0}
+            height={0}
+            sizes='100vw'
             src={imgUrl}
             alt={title}
             className='absolute w-full h-full object-cover rounded-[24px]'
@@ -22,7 +26,10 @@ const ProjectCards = ({ id, imgUrl, title, tag, i, active, handleClick }) => (
         ) : (
             <div className='absolute bottom-0 p-8 justify-start w-full flex-col bg-[rgba(0,0,0,0.5)] rounded-b-[24px]'>
                 <div className='flex justify-center items-center w-[60px] h-[60px] rounded-[24px] glassmorphism mb-[16px]'>
-                    <img
+                    <Image
+                        width={0}
+                        height={0}
+                        sizes='100vw'
                         src='/images/logo-bn.png'
                         alt='headset'
                         className='ww-1/2 h-1/2 onject-contain'

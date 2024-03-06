@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { socials } from '../../constants';
 import { fadeIn, staggerContainer } from '../../utils/motion';
 import { TypingText } from '../TextStyles/CustomText';
+import Image from 'next/image';
 
 const SendEmail = () => {
     const [email, setEmail] = useState(false);
@@ -60,7 +61,10 @@ const SendEmail = () => {
                         <div className='socials flex flex-row gap-2 items-center'>
                             {socials.map((social, i) => (
                                 <Link href={social.link} key={i}>
-                                    <img
+                                    <Image
+                                        width={0}
+                                        height={0}
+                                        sizes='100vw'
                                         key={social.name}
                                         src={social.url}
                                         alt={social.name}

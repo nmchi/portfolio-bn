@@ -58,14 +58,14 @@ const tabData = [
         content: (
             <ul className='flex flex-col gap-2'>
                 <li className='flex'>
-                    <Image width={20} height={20} src='/images/icons/graduation-cap-solid.svg' className='mr-3' />
+                    <Image width={20} height={20} alt='edu' src='/images/icons/graduation-cap-solid.svg' className='mr-3' />
                     Thai Nguyen University of Information and Communication Technology</li>
                 <li className='flex'>
-                    <Image width={20} height={20} src='/images/icons/laptop-code-solid.svg' className='mr-3' />
+                    <Image width={20} height={20} alt='maj' src='/images/icons/laptop-code-solid.svg' className='mr-3' />
                     Major: Information Technology
                 </li>
                 <li className='flex'>
-                    <Image width={15} height={15} src='/images/icons/score-total.svg' className='mr-4' />
+                    <Image width={15} height={15} alt='gpa' src='/images/icons/score-total.svg' className='mr-4' />
                     GPA: 2.51
                 </li>
             </ul>
@@ -97,7 +97,10 @@ const AboutSection = () => {
                 <motion.div
                     variants={planetVariants('left')}
                     className='flex flex-1 justify-center flex-col'>
-                    <img
+                    <Image
+                        width={0}
+                        height={0}
+                        sizes='100vw'
                         src='/images/about.png'
                         alt='about me'
                         className='w-full h-full object-contain'
