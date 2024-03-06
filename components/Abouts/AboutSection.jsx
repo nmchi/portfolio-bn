@@ -14,39 +14,39 @@ const tabData = [
         content: (
             <ul className='flex flex-col gap-2'>
                 <li className='flex'>
-                    <Image width={20} height={20} src='/images/icons/js.svg' className='mr-3' />
+                    <Image width={20} height={20} alt='js' src='/images/icons/js.svg' className='mr-3' />
                     JavaScript, Java Spring Boot
                 </li>
                 <li className='flex'>
-                    <Image width={20} height={20} src='/images/icons/react.svg' className='mr-3' />
+                    <Image width={20} height={20} alt='react' src='/images/icons/react.svg' className='mr-3' />
                     ReactJs, Redux
                 </li>
                 <li className='flex'>
-                    <Image width={20} height={20} src='/images/icons/next.svg' className='mr-3' />
+                    <Image width={20} height={20} alt='next' src='/images/icons/next.svg' className='mr-3' />
                     NextJs
                 </li>
                 <li className='flex'>
-                    <Image width={20} height={20} src='/images/icons/database-solid.svg' className='mr-3' />
+                    <Image width={20} height={20} alt='db' src='/images/icons/database-solid.svg' className='mr-3' />
                     MySQL, PostgreSQL, MongoDB
                 </li>
                 <li className='flex'>
-                    <Image width={20} height={20} src='/images/icons/php.svg' className='mr-3' />
+                    <Image width={20} height={20} alt='php' src='/images/icons/php.svg' className='mr-3' />
                     PHP
                 </li>
                 <li className='flex'>
-                    <Image width={20} height={20} src='/images/icons/wordpress-simple.svg' className='mr-3' />
+                    <Image width={20} height={20} alt='wp' src='/images/icons/wordpress-simple.svg' className='mr-3' />
                     WordPress
                 </li>
                 <li className='flex'>
-                    <Image width={20} height={20} src='/images/icons/tailwind-css-svgrepo-com.svg' className='mr-3' />
+                    <Image width={20} height={20} alt='taild' src='/images/icons/tailwind-css-svgrepo-com.svg' className='mr-3' />
                     TailWind CSS
                 </li>
                 <li className='flex'>
-                    <Image width={20} height={20} src='/images/icons/infinity-solid.svg' className='mr-3' />
+                    <Image width={20} height={20} alt='infinit' src='/images/icons/infinity-solid.svg' className='mr-3' />
                     HTML, CSS, Bootstrap, SCSS
                 </li>
                 <li className='flex'>
-                    <Image width={20} height={20} src='/images/icons/gitlab.svg' className='mr-3' />
+                    <Image width={20} height={20} alt='git' src='/images/icons/gitlab.svg' className='mr-3' />
                     Github, GitLab, 
                 </li>
             </ul>

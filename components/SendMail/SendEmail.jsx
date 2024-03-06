@@ -58,8 +58,8 @@ const SendEmail = () => {
                         </p>
 
                         <div className='socials flex flex-row gap-2 items-center'>
-                            {socials.map((social) => (
-                                <Link href={social.link}>
+                            {socials.map((social, i) => (
+                                <Link href={social.link} key={i}>
                                     <img
                                         key={social.name}
                                         src={social.url}
