@@ -33,13 +33,12 @@ const Projects = () => {
                 whileInView="show"
                 className='w-full 2xl:max-w-[1280px] mx-auto flex flex-col'>
 
-                <TypingText title="|My Projects" textStyles="text-center" />
+                <TypingText title="| My Projects" textStyles="text-center" />
 
-                <motion.div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+                <motion.div className="flex flex-row justify-center items-center py-6 text-white">
                     <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"} />
                     <ProjectTag onClick={handleTagChange} name="WordPress" isSelected={tag === "WordPress"} />
                     <ProjectTag onClick={handleTagChange} name="NextJS" isSelected={tag === "NextJS"} />
-                    <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"} />
                 </motion.div>
 
                 <motion.div>

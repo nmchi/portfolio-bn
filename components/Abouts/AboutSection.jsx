@@ -84,7 +84,7 @@ const AboutSection = () => {
     };
 
     return (
-        <section className='sm:p-16 xs:p-8 px-6 py-12 relative z-10' id='about'>
+        <section className='sm:pl-16 pl-6 sm:py-16 xs:py-8 px-6 py-12' id='about'>
             <div className='gradient-02 z-0' />
 
             <motion.div

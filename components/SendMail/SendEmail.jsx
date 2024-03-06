@@ -20,18 +20,19 @@ const SendEmail = () => {
             message: e.target.message.value,
         }
 
+        console.log("data", data);
+
         const JSONdata = JSON.stringify(data);
-        const endpoint = "/api/email";
+        const endpoint = "/api/send";
         const options = {
             method: 'POST',
-            header: {
+            headers: {
                 'Content-Type': 'application/json',
             },
             body: JSONdata,
         }
 
         const response = await fetch(endpoint, options);
-        const resData = await response.json();
         if (response.status === 200) {
             console.log('Message send.');
             setEmail(true);

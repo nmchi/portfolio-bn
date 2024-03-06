@@ -52,7 +52,7 @@ const HeroSection = () => {
 
                 <motion.div
                     variants={slideIn('right', 'tween', 0.2, 1)}
-                    className='flex flex-1 justify-center flex-col'>
+                    className='flex flex-1 justify-center flex-col items-center'>
                     <div className='rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative'>
                         <Image
                             src="/images/hero.png"
