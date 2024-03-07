@@ -37,8 +37,8 @@ const Projects = () => {
 
                 <motion.div className="flex flex-row justify-center items-center py-6 text-white">
                     <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"} />
-                    <ProjectTag onClick={handleTagChange} name="WordPress" isSelected={tag === "WordPress"} />
                     <ProjectTag onClick={handleTagChange} name="NextJS" isSelected={tag === "NextJS"} />
+                    <ProjectTag onClick={handleTagChange} name="WordPress" isSelected={tag === "WordPress"} />
                 </motion.div>
 
                 <motion.div>
