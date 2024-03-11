@@ -3,6 +3,8 @@ import '../styles/globals.css';
 import { Bounce, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+require('dotenv').config()
+
 const MyApp = ({ Component, pageProps }) => (
     <>
         <Head>
