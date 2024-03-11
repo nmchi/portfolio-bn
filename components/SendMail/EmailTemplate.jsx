@@ -1,44 +1,45 @@
 'use client'
 
-import Link from 'next/link'
+import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import { motion } from 'framer-motion';
 import { socials } from '../../constants';
 import { fadeIn, staggerContainer } from '../../utils/motion';
 import { TypingText } from '../TextStyles/CustomText';
 import Image from 'next/image';
+import Link from 'next/link';
+import { toast } from 'react-toastify';
 
-const SendEmail = () => {
-    const [email, setEmail] = useState(false);
+const EmailTemplate = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const route = useRouter();
+
+    const [isSubmit, setIsSubmit] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        const data = {
-            email: e.target.email.value,
-            subject: e.target.subject.value,
-            message: e.target.message.value,
-        }
-
-        console.log("data", data);
-
-        const JSONdata = JSON.stringify(data);
-        const endpoint = "/api/send";
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSONdata,
-        }
-
-        const response = await fetch(endpoint, options);
-        if (response.status === 200) {
-            console.log('Message send.');
-            setEmail(true);
+        try {
+            const res = await fetch('/api/send', {
+                method: 'POST',
+                body: JSON.stringify({
+                    name, email, message
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            if (res.ok) {
+                toast.success('Sendding successfully !');
+            } else {
+                toast.error('Something went wrong!');
+            }
+        } catch (error) {
+            toast.error('An error occurred!');
         }
     }
-
+    
     return (
         <section className='sm:p-16 xs:p-8 px-6 py-12 relative z-10' id='contact'>
             <motion.div
@@ -83,31 +84,35 @@ const SendEmail = () => {
                     <form className='flex flex-col' onSubmit={handleSubmit}>
                         <div className='mb-6'>
                             <label htmlFor='email' className='text-white mb-2 block text-sm font-medium'>
-                                Your Email
+                                Your name
                             </label>
 
                             <input
-                                name='email'
-                                type='email'
-                                id='email'
+                                id="name"
+                                name="name"
+                                type="text"
                                 required
-                                placeholder='jacob@gmail.com'
+                                value={name}
+                                placeholder='Enter your name.'
                                 className='bg-[#18191e] border border-[#33353f] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
+                                onChange={(e) => setName(e.target.value)}
                             />
                         </div>
 
                         <div className='mb-6'>
                             <label htmlFor='subject' className='text-white mb-2 block text-sm font-medium'>
-                                Subject
+                                Your email
                             </label>
 
                             <input
-                                name='subject'
-                                type='text'
-                                id='subject'
+                                id="email"
+                                name="email"
+                                type="email"
                                 required
-                                placeholder='Just saying hi'
+                                value={email}
+                                placeholder='email@example.com'
                                 className='bg-[#18191e] border border-[#33353f] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
 
@@ -117,23 +122,19 @@ const SendEmail = () => {
                             </label>
 
                             <textarea
-                                name='message'
-                                id='message'
+                                id="message"
+                                name="message"
                                 required
-                                placeholder="Let's talk about ..."
+                                value={message}
+                                placeholder="Enter your messages for me..."
                                 className='bg-[#18191e] border border-[#33353f] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
+                                onChange={(e) => setMessage(e.target.value)}
                             />
                         </div>
 
                         <button type='submit' className='bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full'>
                             Send Message
                         </button>
-
-                        {email && (
-                            <p className='text-green-500 text-sm mt-2'>
-                                Email send successfully!
-                            </p>
-                        )}
                     </form>
                 </motion.div>
             </motion.div>
@@ -141,4 +142,4 @@ const SendEmail = () => {
     )
 }
 
-export default SendEmail
+export default EmailTemplate
