@@ -96,6 +96,15 @@ export const projectsData = [
         image: "/images/project/next_react_js/bank.png",
         tag: ["All", "NextJS"],
         gitUrl: "/",
-        previewUrl: "https://bank-modern-app-amber-phi.vercel.app/",
+        previewUrl: "https://bnbank-modern.vercel.app/",
+    },
+    {
+        id: 10,
+        title: "Ware",
+        description: "Ware design from Figma, use ReactJS, Tailwind CSS, ViteJS",
+        image: "/images/project/next_react_js/ware.png",
+        tag: ["All", "NextJS"],
+        gitUrl: "/",
+        previewUrl: "https://bnware.vercel.app/",
     },
 ];
