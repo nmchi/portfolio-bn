@@ -66,7 +66,7 @@ const tabData = [
                 </li>
                 <li className='flex'>
                     <Image width={15} height={15} alt='gpa' src='/images/icons/score-total.svg' className='mr-4' />
-                    GPA: 2.51
+                    Degree: engineer
                 </li>
             </ul>
         )

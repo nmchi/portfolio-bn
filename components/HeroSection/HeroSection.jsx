@@ -9,7 +9,7 @@ import { saveAs } from 'file-saver'
 
 const HeroSection = () => {
     function downloadCV () {
-        saveAs('/NGUYEN-MINH-CHI-FE-Develop.pdf', 'BaronNguyen-CV.pdf');
+        saveAs('/NGUYEN-MINH-CHI-FE-Developer.pdf', 'NguyenMinhChi-CV.pdf');
     }
 
     return (
