@@ -60,7 +60,7 @@ const EmailTemplate = () => {
                             to get back to you!
                         </p>
 
-                        <div className='socials flex flex-row gap-2 items-center'>
+                        {/* <div className='socials flex flex-row gap-2 items-center'>
                             {socials.map((social, i) => (
                                 <Link href={social.link} key={i}>
                                     <Image
@@ -74,7 +74,7 @@ const EmailTemplate = () => {
                                     />
                                 </Link>
                             ))}
-                        </div>
+                        </div> */}
                     </motion.div>
                 </motion.div>
 
